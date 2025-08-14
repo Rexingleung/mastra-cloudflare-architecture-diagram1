@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<svg viewBox="0 0 1400 1200" xmlns="http://www.w3.org/2000/svg">
+		<!-- Background -->
+		<rect width="1400" height="1200" fill="#f8fafc"/>
+		
+		<!-- Title -->
+		<text x="700" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+			Mastra AI + Cloudflare 详细技术架构图
+		</text>
+		
+		<!-- DNS Layer -->
+		<g id="dns-layer">
+			<rect x="50" y="60" width="1300" height="60" fill="#f97316" rx="8" opacity="0.9"/>
+			<text x="700" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Cloudflare DNS & Global Network</text>
+			<text x="200" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Anycast DNS | 200+ 数据中心</text>
+			<text x="500" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">DDoS 防护 | WAF 规则</text>
+			<text x="800" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">SSL/TLS 1.3 | HTTP/3 支持</text>
+			<text x="1100" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">智能路由 | 负载均衡</text>
+		</g>
+		
+		<!-- Client Layer -->
+		<g id="client-layer">
+			<rect x="50" y="140" width="300" height="100" fill="#3b82f6" rx="8" opacity="0.9"/>
+			<text x="200" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">客户端层</text>
+			
+			<rect x="70" y="180" width="80" height="50" fill="#2563eb" rx="4"/>
+			<text x="110" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Web Browser</text>
+			<text x="110" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Chrome/Safari</text>
+			<text x="110" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">WebSocket</text>
+			
+			<rect x="170" y="180" width="80" height="50" fill="#2563eb" rx="4"/>
+			<text x="210" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Mobile App</text>
+			<text x="210" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">React Native</text>
+			<text x="210" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">PWA Support</text>
+			
+			<rect x="270" y="180" width="70" height="50" fill="#2563eb" rx="4"/>
+			<text x="305" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">CLI/SDK</text>
+			<text x="305" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Node.js</text>
+			<text x="305" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Python</text>
+		</g>
+		
+		<!-- Cloudflare Pages Detailed -->
+		<g id="pages-detailed">
+			<rect x="400" y="140" width="450" height="160" fill="#10b981" rx="8" opacity="0.9"/>
+			<text x="625" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Cloudflare Pages (前端层)</text>
+			
+			<!-- Build & Deploy -->
+			<rect x="420" y="180" width="130" height="70" fill="#059669" rx="5"/>
+			<text x="485" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">构建 & 部署</text>
+			<text x="485" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Git Integration</text>
+			<text x="485" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Auto Build (Vite/Webpack)</text>
+			<text x="485" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Preview Deployments</text>
+			
+			<!-- Frontend Framework -->
+			<rect x="570" y="180" width="130" height="70" fill="#059669" rx="5"/>
+			<text x="635" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">前端框架</text>
+			<text x="635" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">React 18 + TypeScript</text>
+			<text x="635" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Next.js/Vite</text>
+			<text x="635" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Tailwind CSS</text>
+			
+			<!-- Static Assets -->
+			<rect x="720" y="180" width="120" height="70" fill="#059669" rx="5"/>
+			<text x="780" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">静态资源</text>
+			<text x="780" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">JS/CSS Bundles</text>
+			<text x="780" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Images/Fonts</text>
+			<text x="780" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Service Worker</text>
+			
+			<!-- Mastra UI Components -->
+			<rect x="420" y="260" width="200" height="30" fill="#047857" rx="4"/>
+			<text x="520" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Mastra UI 组件库</text>
+			
+			<rect x="640" y="260" width="200" height="30" fill="#047857" rx="4"/>
+			<text x="740" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">环境配置: .env | wrangler.toml</text>
+		</g>
+		
+		<!-- Cloudflare Workers Detailed -->
+		<g id="workers-detailed">
+			<rect x="900" y="140" width="450" height="300" fill="#8b5cf6" rx="8" opacity="0.9"/>
+			<text x="1125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Cloudflare Workers (边缘计算层)</text>
+			
+			<!-- API Gateway -->
+			<rect x="920" y="180" width="130" height="80" fill="#7c3aed" rx="5"/>
+			<text x="985" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">API Gateway</text>
+			<text x="985" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Hono.js Framework</text>
+			<text x="985" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">JWT 认证</text>
+			<text x="985" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Rate Limiting</text>
+			<text x="985" y="251" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">CORS 处理</text>
+			
+			<!-- Mastra Worker -->
+			<rect x="1070" y="180" width="130" height="80" fill="#7c3aed" rx="5"/>
+			<text x="1135" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Mastra Worker</text>
+			<text x="1135" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Workflow Engine</text>
+			<text x="1135" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Agent 调度</text>
+			<text x="1135" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Context 管理</text>
+			<text x="1135" y="251" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Error Handling</text>
+			
+			<!-- AI Proxy -->
+			<rect x="1220" y="180" width="120" height="80" fill="#7c3aed" rx="5"/>
+			<text x="1280" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">AI 代理层</text>
+			<text x="1280" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">模型路由</text>
+			<text x="1280" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Streaming</text>
+			<text x="1280" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Fallback</text>
+			<text x="1280" y="251" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">监控</text>
+			
+			<!-- Data Layer -->
+			<rect x="920" y="275" width="130" height="80" fill="#6d28d9" rx="5"/>
+			<text x="985" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">数据层</text>
+			<text x="985" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">KV Storage</text>
+			<text x="985" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Session 管理</text>
+			<text x="985" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cache API</text>
+			<text x="985" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">D1 SQLite</text>
+			
+			<!-- Queue System -->
+			<rect x="1070" y="275" width="130" height="80" fill="#6d28d9" rx="5"/>
+			<text x="1135" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">队列系统</text>
+			<text x="1135" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">CF Queues</text>
+			<text x="1135" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Durable Objects</text>
+			<text x="1135" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cron Triggers</text>
+			<text x="1135" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Batch Processing</text>
+			
+			<!-- Real-time -->
+			<rect x="1220" y="275" width="120" height="80" fill="#6d28d9" rx="5"/>
+			<text x="1280" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">实时通信</text>
+			<text x="1280" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">WebSockets</text>
+			<text x="1280" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Server-Sent Events</text>
+			<text x="1280" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Push 通知</text>
+			<text x="1280" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">状态同步</text>
+			
+			<!-- Worker Runtime -->
+			<rect x="920" y="365" width="420" height="35" fill="#5b21b6" rx="4"/>
+			<text x="1130" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">V8 Runtime | 100ms CPU Limit | 128MB Memory | Global Edge Deployment</text>
+			
+			<!-- Configuration -->
+			<rect x="920" y="410" width="420" height="25" fill="#4c1d95" rx="4"/>
+			<text x="1130" y="427" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">wrangler.toml | 环境变量 | Secret 管理 | 路由配置</text>
+		</g>
+		
+		<!-- Mastra AI Core Detailed -->
+		<g id="mastra-core-detailed">
+			<rect x="50" y="480" width="1300" height="350" fill="#dc2626" rx="8" opacity="0.9"/>
+			<text x="700" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Mastra AI 核心服务层</text>
+			
+			<!-- AI Models -->
+			<rect x="70" y="525" width="200" height="120" fill="#b91c1c" rx="5"/>
+			<text x="170" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">AI 模型管理</text>
+			<text x="170" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">OpenAI: GPT-4, GPT-3.5</text>
+			<text x="170" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Anthropic: Claude-3</text>
+			<text x="170" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Google: Gemini Pro</text>
+			<text x="170" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Stability: SDXL</text>
+			<text x="170" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Embedding Models</text>
+			<text x="170" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">模型负载均衡</text>
+			<text x="170" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">成本优化路由</text>
+			
+			<!-- Workflow Engine -->
+			<rect x="290" y="525" width="200" height="120" fill="#b91c1c" rx="5"/>
+			<text x="390" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">工作流引擎</text>
+			<text x="390" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">YAML/JSON 配置</text>
+			<text x="390" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">DAG 执行引擎</text>
+			<text x="390" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">并行/串行执行</text>
+			<text x="390" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">条件分支逻辑</text>
+			<text x="390" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">重试&错误处理</text>
+			<text x="390" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">状态持久化</text>
+			<text x="390" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">执行监控</text>
+			
+			<!-- Agent System -->
+			<rect x="510" y="525" width="200" height="120" fill="#b91c1c" rx="5"/>
+			<text x="610" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">智能体系统</text>
+			<text x="610" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Multi-Agent 协作</text>
+			<text x="610" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">ReAct Pattern</text>
+			<text x="610" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Tool Calling</text>
+			<text x="610" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Chain of Thought</text>
+			<text x="610" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Memory 管理</text>
+			<text x="610" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Planning & Execution</text>
+			<text x="610" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">反思与优化</text>
+			
+			<!-- Tool Integration -->
+			<rect x="730" y="525" width="200" height="120" fill="#b91c1c" rx="5"/>
+			<text x="830" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">工具集成</text>
+			<text x="830" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Web Search (Serper)</text>
+			<text x="830" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Code Execution</text>
+			<text x="830" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">File Processing</text>
+			<text x="830" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">API Connectors</text>
+			<text x="830" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Database Query</text>
+			<text x="830" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Email/Slack 集成</text>
+			<text x="830" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">自定义工具 API</text>
+			
+			<!-- Knowledge Base -->
+			<rect x="950" y="525" width="200" height="120" fill="#b91c1c" rx="5"/>
+			<text x="1050" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">知识库系统</text>
+			<text x="1050" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">RAG 架构</text>
+			<text x="1050" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">向量数据库</text>
+			<text x="1050" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">文档解析器</text>
+			<text x="1050" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">语义分块</text>
+			<text x="1050" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">相似度搜索</text>
+			<text x="1050" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">知识图谱</text>
+			<text x="1050" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">动态更新</text>
+			
+			<!-- Monitoring -->
+			<rect x="1170" y="525" width="170" height="120" fill="#b91c1c" rx="5"/>
+			<text x="1255" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">监控系统</text>
+			<text x="1255" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">实时性能指标</text>
+			<text x="1255" y="577" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">成本追踪</text>
+			<text x="1255" y="589" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">错误告警</text>
+			<text x="1255" y="601" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">使用统计</text>
+			<text x="1255" y="613" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">A/B 测试</text>
+			<text x="1255" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">审计日志</text>
+			<text x="1255" y="637" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">合规检查</text>
+			
+			<!-- Core Services -->
+			<rect x="70" y="660" width="250" height="80" fill="#991b1b" rx="5"/>
+			<text x="195" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">核心服务</text>
+			<text x="195" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">配置管理 | 环境隔离</text>
+			<text x="195" y="707" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">安全认证 | 权限控制</text>
+			<text x="195" y="719" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">版本管理 | 回滚机制</text>
+			<text x="195" y="731" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">健康检查 | 自动恢复</text>
+			
+			<!-- Event System -->
+			<rect x="340" y="660" width="250" height="80" fill="#991b1b" rx="5"/>
+			<text x="465" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">事件系统</text>
+			<text x="465" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">EventBus | Pub/Sub 模式</text>
+			<text x="465" y="707" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Webhook 触发器</text>
+			<text x="465" y="719" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">定时任务调度</text>
+			<text x="465" y="731" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">事件重放 | 顺序保证</text>
+			
+			<!-- Data Pipeline -->
+			<rect x="610" y="660" width="250" height="80" fill="#991b1b" rx="5"/>
+			<text x="735" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">数据管道</text>
+			<text x="735" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">ETL 流程 | 数据转换</text>
+			<text x="735" y="707" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">批处理 | 流处理</text>
+			<text x="735" y="719" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">数据验证 | 清洗</text>
+			<text x="735" y="731" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">备份恢复 | 归档</text>
+			
+			<!-- API Layer -->
+			<rect x="880" y="660" width="250" height="80" fill="#991b1b" rx="5"/>
+			<text x="1005" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">API 层</text>
+			<text x="1005" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">REST API | GraphQL</text>
+			<text x="1005" y="707" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">OpenAPI 规范</text>
+			<text x="1005" y="719" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">版本控制 | 向后兼容</text>
+			<text x="1005" y="731" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">SDK 生成 | 文档</text>
+			
+			<!-- Deployment -->
+			<rect x="1150" y="660" width="190" height="80" fill="#991b1b" rx="5"/>
+			<text x="1245" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">部署策略</text>
+			<text x="1245" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">蓝绿部署</text>
+			<text x="1245" y="707" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">金丝雀发布</text>
+			<text x="1245" y="719" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">A/B 测试</text>
+			<text x="1245" y="731" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">回滚策略</text>
+		</g>
+		
+		<!-- External Services Detailed -->
+		<g id="external-services-detailed">
+			<rect x="50" y="870" width="1300" height="180" fill="#64748b" rx="8" opacity="0.9"/>
+			<text x="700" y="895" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">外部服务集成层</text>
+			
+			<!-- Storage Services -->
+			<rect x="70" y="915" width="200" height="80" fill="#475569" rx="5"/>
+			<text x="170" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">存储服务</text>
+			<text x="170" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cloudflare D1 (SQLite)</text>
+			<text x="170" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">KV Storage (全局复制)</text>
+			<text x="170" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">R2 对象存储</text>
+			<text x="170" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Durable Objects</text>
+			
+			<!-- AI Services -->
+			<rect x="290" y="915" width="200" height="80" fill="#475569" rx="5"/>
+			<text x="390" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">AI 服务提供商</text>
+			<text x="390" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">OpenAI API (GPT-4/3.5)</text>
+			<text x="390" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Anthropic Claude API</text>
+			<text x="390" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Google Vertex AI</text>
+			<text x="390" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Azure OpenAI Service</text>
+			
+			<!-- Vector Databases -->
+			<rect x="510" y="915" width="200" height="80" fill="#475569" rx="5"/>
+			<text x="610" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">向量数据库</text>
+			<text x="610" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Pinecone (托管)</text>
+			<text x="610" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Weaviate (开源)</text>
+			<text x="610" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Qdrant (自托管)</text>
+			<text x="610" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Chroma (嵌入式)</text>
+			
+			<!-- Integration Services -->
+			<rect x="730" y="915" width="200" height="80" fill="#475569" rx="5"/>
+			<text x="830" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">集成服务</text>
+			<text x="830" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Slack API</text>
+			<text x="830" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">GitHub API</text>
+			<text x="830" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Notion API</text>
+			<text x="830" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Discord Webhooks</text>
+			
+			<!-- Monitoring & Analytics -->
+			<rect x="950" y="915" width="200" height="80" fill="#475569" rx="5"/>
+			<text x="1050" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">监控分析</text>
+			<text x="1050" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cloudflare Analytics</text>
+			<text x="1050" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Sentry 错误追踪</text>
+			<text x="1050" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">LogFlare 日志</text>
+			<text x="1050" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">PostHog 用户分析</text>
+			
+			<!-- Security Services -->
+			<rect x="1170" y="915" width="170" height="80" fill="#475569" rx="5"/>
+			<text x="1255" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">安全服务</text>
+			<text x="1255" y="950" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Auth0 / Clerk</text>
+			<text x="1255" y="962" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cloudflare Access</text>
+			<text x="1255" y="974" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Zero Trust Network</text>
+			<text x="1255" y="986" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">API 密钥管理</text>
+			
+			<!-- Configuration -->
+			<rect x="70" y="1005" width="1270" height="35" fill="#334155" rx="4"/>
+			<text x="705" y="1025" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">配置管理: 环境变量 | Secrets | 服务发现 | 负载均衡 | 熔断器 | 重试策略 | 超时控制</text>
+		</g>
+		
+		<!-- API Endpoints -->
+		<g id="api-endpoints">
+			<rect x="50" y="1070" width="650" height="100" fill="#1e293b" rx="5" opacity="0.9"/>
+			<text x="375" y="1090" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">主要 API 端点</text>
+			
+			<text x="80" y="1110" font-family="Arial, sans-serif" font-size="10" fill="white">POST /api/v1/chat/completions - AI 对话</text>
+			<text x="80" y="1125" font-family="Arial, sans-serif" font-size="10" fill="white">POST /api/v1/workflows/execute - 工作流执行</text>
+			<text x="80" y="1140" font-family="Arial, sans-serif" font-size="10" fill="white">GET /api/v1/agents/{id}/status - Agent 状态</text>
+			<text x="80" y="1155" font-family="Arial, sans-serif" font-size="10" fill="white">POST /api/v1/knowledge/query - 知识库查询</text>
+			
+			<text x="380" y="1110" font-family="Arial, sans-serif" font-size="10" fill="white">GET /api/v1/tools/list - 可用工具列表</text>
+			<text x="380" y="1125" font-family="Arial, sans-serif" font-size="10" fill="white">POST /api/v1/embeddings - 向量嵌入</text>
+			<text x="380" y="1140" font-family="Arial, sans-serif" font-size="10" fill="white">WebSocket /ws/events - 实时事件流</text>
+			<text x="380" y="1155" font-family="Arial, sans-serif" font-size="10" fill="white">GET /api/v1/metrics - 系统指标</text>
+		</g>
+		
+		<!-- Deployment Pipeline -->
+		<g id="deployment-pipeline">
+			<rect x="720" y="1070" width="630" height="100" fill="#059669" rx="5" opacity="0.9"/>
+			<text x="1035" y="1090" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">部署流水线</text>
+			
+			<rect x="740" y="1100" width="100" height="25" fill="#047857" rx="3"/>
+			<text x="790" y="1117" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Git Push</text>
+			
+			<rect x="860" y="1100" width="100" height="25" fill="#047857" rx="3"/>
+			<text x="910" y="1117" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">CI/CD 触发</text>
+			
+			<rect x="980" y="1100" width="100" height="25" fill="#047857" rx="3"/>
+			<text x="1030" y="1117" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">构建测试</text>
+			
+			<rect x="1100" y="1100" width="100" height="25" fill="#047857" rx="3"/>
+			<text x="1150" y="1117" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">部署 Workers</text>
+			
+			<rect x="1220" y="1100" width="120" height="25" fill="#047857" rx="3"/>
+			<text x="1280" y="1117" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">更新 Pages</text>
+			
+			<text x="1035" y="1145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">GitHub Actions | Wrangler CLI | 自动化测试 | 金丝雀部署</text>
+			<text x="1035" y="1160" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">环境管理: dev → staging → production</text>
+		</g>
+		
+		<!-- Data Flow Arrows -->
+		<defs>
+			<marker id="arrowhead" markerWidth="10" markerHeight="7" 
+			 refX="0" refY="3.5" orient="auto">
+				<polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" />
+			</marker>
+			<marker id="arrowhead-red" markerWidth="10" markerHeight="7" 
+			 refX="0" refY="3.5" orient="auto">
+				<polygon points="0 0, 10 3.5, 0 7" fill="#dc2626" />
+			</marker>
+			<marker id="arrowhead-green" markerWidth="10" markerHeight="7" 
+			 refX="0" refY="3.5" orient="auto">
+				<polygon points="0 0, 10 3.5, 0 7" fill="#059669" />
+			</marker>
+		</defs>
+		
+		<!-- Request Flow -->
+		<path d="M 350 190 L 400 190" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+		<text x="375" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3b82f6">HTTP/HTTPS</text>
+		
+		<path d="M 850 240 L 900 240" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+		<text x="875" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3b82f6">API 调用</text>
+		
+		<path d="M 1125 440 L 1125 480" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowhead-red)"/>
+		<text x="1125" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#dc2626">Worker → AI</text>
+		
+		<path d="M 700 830 L 700 870" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+		<text x="700" y="855" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">外部服务</text>
+		
+		<!-- Performance Metrics -->
+		<rect x="50" y="1180" width="1300" height="20" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="3"/>
+		<text x="700" y="1195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">
+			性能指标: 冷启动 &lt;100ms | 响应时间 &lt;200ms | 99.9% 可用性 | 全球 200+ 边缘节点 | 自动扩展 0-∞
+		</text>
+</body>
+</html>
